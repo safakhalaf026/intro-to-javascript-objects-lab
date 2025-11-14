@@ -216,7 +216,7 @@ for (printName of game.party){
 // EXERCISE 9:
 for (printStarter of pokemon){
     if(printStarter.starter === true){
-        console.log(printStarter)
+        console.log('Answer 9 ' + printStarter.name)
     }
 }
 
@@ -224,6 +224,58 @@ for (printStarter of pokemon){
 game.catchPokemon = function(pokemonObj){
     game.party.push(pokemonObj)   
 } 
-game.catchPokemon(pokemon[150])
+game.catchPokemon(pokemon[16])
 console.log(game.party)
+
+// EXERCISE 11:
+game.catchPokemon = function(pokemonObj){
+    game.party.push(pokemonObj)  
+    game.items[1].quantity = game.items[1].quantity -1
+}
+game.catchPokemon(pokemon[15])
+console.log(game.party)
+console.log(game.items[1].quantity)
+
+// EXERCISE 12:
+for (updateGym2 of game.gyms ){
+    if(updateGym2.difficulty < 6){
+        updateGym2.completed=true
+    }
+}
+console.log(game.gyms)
+
+// EXERCISE 13:
+const gymTally = {
+        completed: 0,
+        incomplete: 0
+    }
+game.gymStatus = function(){
+    for (tally of game.gyms){
+        if(tally.completed === true){
+            gymTally.completed = gymTally.completed + 1
+        }if(tally.completed === false){
+            gymTally.incomplete = gymTally.incomplete + 1
+        }
+    }
+}
+game.gymStatus()
+console.log(gymTally)
+
+// EXERCISE 14:
+game.partyCount = function(){
+    return game.party.length
+}
+console.log(game.partyCount())
+
+// EXERCISE 15:
+for (updateGym3 of game.gyms ){
+    if(updateGym3.difficulty < 8){
+        updateGym3.completed=true
+    }
+}
+console.log(game.gyms)
+
+// EXERCISE 16:
+
+console.log(game)
 
